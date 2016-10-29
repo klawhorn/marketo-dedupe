@@ -1,6 +1,5 @@
 var fs = require('fs');
 
-fs.writeFile('message.txt', 'Hello Node.js', (err) => {
-  if (err) throw err;
-  console.log('It\'s saved!');
+fs.writeFile('message.txt', 'Hello Node.js', 'utf8', function(){
+  console.log('Saved');
 });

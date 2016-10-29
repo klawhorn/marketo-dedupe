@@ -6,6 +6,7 @@ var createOutput = require('./js/outputFile.js');
 var file = process.argv[2].toString();
 //parseJSON and point directly to .leads
 var sourceData = ingestFile.parseJSON(file);
+console.log(sourceData);
 
 
 

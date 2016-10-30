@@ -4,7 +4,7 @@ var reset = require('./resetFormat.js');
 module.exports = {
   reOrder: function (array, property) {
     function reorder (arr) {
-      //create an empty object
+      //create an empty object for what we will keep
       var obj = {};
       //big array of data objects, for each source object
       arr.forEach(function (entry) {
@@ -23,6 +23,7 @@ module.exports = {
             obj[entry[property]].push(entry)
           } else {
             //THIS IS WHERE WE DEDUPLICATE, NEED TO STORE CURRENT ENTRY SOMEWHERE (entry).
+            console.log("Deleting record due to duplicate " + property+ " entry: \n"+entry);
             return;
           }
         }

@@ -24,11 +24,12 @@ module.exports = {
             //THIS IS WHERE WE DEDUPLICATE, NEED TO STORE obj[entry[property]][0] SOMEWHERE.
             if (obj.duplicate_data[entry[property]]) {
               obj.duplicate_data[entry[property]].push(obj.output_data[entry[property]].pop());
+              obj.output_data[entry[property]].push(entry);
             } else {
               obj.duplicate_data[entry[property]] = [];
               obj.duplicate_data[entry[property]].push(obj.output_data[entry[property]].pop());
+              obj.output_data[entry[property]].push(entry);
             }
-            obj.output_data[entry[property]].push(entry);
           } else {
             //THIS IS WHERE WE DEDUPLICATE, NEED TO STORE CURRENT ENTRY SOMEWHERE (entry).
             obj.duplicate_data[entry[property]].push(entry);

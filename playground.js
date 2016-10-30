@@ -21,3 +21,7 @@ console.log(moment(day1).isBefore(day2));
 // console.log('1 and 2 Same: ' +isSame12);
 
 //so if is before/after doesn't work,
+
+
+//in rearrangeByID, line 24 comments, this is where we are popping the values off because they are the undesireable duplicate.
+//^^NEED TO INCLUDE A PLACE FOR THEM.

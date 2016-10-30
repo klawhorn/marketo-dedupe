@@ -1,17 +1,10 @@
 var moment = require('moment');
 
 module.exports = {
-  chooseByDate : function (obj) {
-    console.log(obj);
-    for (var key in obj) {
-      //find objects that contain more than one entry
-      if (obj[key].length > 1) {
-
-          console.log(obj[key]);
-      }
-    }
+  isBefore : function (moment1, moment2) {
+    return moment(moment1).isBefore(moment2);
   },
-  compareDates : function () {
-    return;
+  isSame : function (moment1, moment2) {
+    return moment(moment1.isSame(moment2));
   }
 }

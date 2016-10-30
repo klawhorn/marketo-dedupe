@@ -1,5 +1,5 @@
 //Require files
-var readFile = require('./js/readFile.js');
+var readFile = require('./js/dedupe.js');
 var write = require('./js/writeFile.js');
 var file = process.argv[2].toString();
 

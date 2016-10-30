@@ -19,11 +19,11 @@ module.exports = {
           //if the entry date are the same, current is lower on the list than existing, so pop out the existing entry and push the current one in.
           if (choose.isSame(existing, current) || choose.isBefore(existing, current)) {
             //THIS IS WHERE WE DEDUPLICATE, NEED TO STORE obj[entry[property]][0] SOMEWHERE.
+            console.log("Deleting record due to duplicate " + property+ " entry: \n"+entry);
             obj[entry[property]].pop();
             obj[entry[property]].push(entry)
           } else {
             //THIS IS WHERE WE DEDUPLICATE, NEED TO STORE CURRENT ENTRY SOMEWHERE (entry).
-            console.log("Deleting record due to duplicate " + property+ " entry: \n"+entry);
             return;
           }
         }

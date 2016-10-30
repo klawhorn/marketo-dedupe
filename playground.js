@@ -1,5 +1,9 @@
-var fs = require('fs');
+//Require files
+var readFile = require('./js/readFile.js');
+var file = process.argv[2].toString();
 
-fs.writeFile('message.txt', 'Hello Node.js', 'utf8', function(){
-  console.log('Saved');
-});
+readFile.readFile(file);
+
+//writing file with reordered data.
+
+//so. Keep moving foward with current structure, rename and reorganize later. Call reorder, call remove duplicates, call reorder, call remove duplicates, call write.

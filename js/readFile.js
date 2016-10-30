@@ -10,7 +10,7 @@ module.exports = {
     fs.readFile(file, 'utf8', function(err, data) {
         var file_data = JSON.parse(data).leads;
         var idOrder = reorderID.reOrderID(file_data);
-        console.log(idOrder);
+        chooseValue.chooseByDate(idOrder);
         //write.writeFile('farts.json', reorderID.reOrderID(file_data));
       });
   }

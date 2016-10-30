@@ -1,9 +1,7 @@
 var choose = require('./chooseValue.js');
-var reset = require('./resetFormat.js');
 
 module.exports = {
-  reOrderEmail: function (array, property, whereToPutTheOutputData, whereToPutTheDupeData, callback) {
-    console.log(' ========= in EMAIL filter, array that is passed: ');
+  reOrderEmail: function (array, property) {
     function reorder (arr) {
       //create an empty object for what we will keep
       var obj = {

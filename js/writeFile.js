@@ -1,14 +1,10 @@
 var fs = require('fs');
+var format = require('./format.js');
 
 module.exports = {
   //writesFile with reformatted data in
   writeFile : function (fileName, data_array) {
-    function addLeadsProp (arr) {
-      var object = {};
-      object.leads = arr;
-      return JSON.stringify(object);
-    }
-    fs.writeFile(fileName, addLeadsProp(data_array), 'utf8', function(){
+    fs.writeFile(fileName, format.leadsProp(data_array), 'utf8', function(){
       console.log('New file written: ' + fileName);
     });
   }

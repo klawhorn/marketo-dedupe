@@ -7,15 +7,20 @@ var reset = require('./resetFormat.js');
 
 module.exports = {
   //reads file passed to it, returns array of objects to filter
-  readFile : function (file) {
+  readFile : function (file, callback) {
     fs.readFile(file, 'utf8', function(err, data) {
+      //reads file
         var file_data = JSON.parse(data).leads;
-        var idOrder = reorderID.reOrderID(file_data);
-        var new_array = reset.resetFormat(idOrder);
-        console.log(new_array);
+      //reorders by id for filtering
+        var idOrder = reorderID.reOrder(file_data, '_id');
+      //reformats an array of unique id entries
+        var filtered_by_id = reset.resetFormat(idOrder);
+      //takes array of unique ids and reorders it by email
+        var emailOrder = reorderID.reOrder(file_data, 'email');
+      //reformats into an array of unique email entries
+        var filtered_by_email = reset.resetFormat(emailOrder);
 
-
-        // write.writeFile('farts.json', reorderID.reOrderID(file_data));
+        callback('output.json', filtered_by_email);
       });
   }
 }

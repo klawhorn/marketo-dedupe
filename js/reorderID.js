@@ -12,7 +12,7 @@ module.exports = {
         'output_data_id' : {},
         'duplicate_id_data' : {}
       };
-      var id_reason = "Removed due to presence of duplicate ID entry with later entryDate";
+      var id_reason = "MORE RECENT ENTRY WITH SAME ID IN DATABASE";
       //big array of data objects, for each source object
       arr.forEach(function (entry) {
         // console.log('===== in for each')

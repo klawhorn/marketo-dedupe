@@ -9,7 +9,7 @@ module.exports = {
         'output_data_email' : {},
         'duplicate_data' : {}
       };
-      var email_reason = "Removed due to presence of duplicate email entry which possessed later entryDate";
+      var email_reason = "MORE RECENT ENTRY WITH SAME EMAIL IN DATABASE";
       arr.forEach(function (entry) {
         // console.log('===== in email for each')
         //if the new object doesn't already have a property with the id, put it in there

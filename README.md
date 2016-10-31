@@ -7,7 +7,7 @@ WELCOME TO THE JSON DEDUPLICATION MACHINE!
   A. cd marketo/dedupe
   B. npm install
   C. node app.js <<<JSON file to deduplicate>>>
-3. For tests, run in console: npm run test
+3. For test coverage run in console: npm run test
 
 ::Challenge Given::
 Programming Challenge:

@@ -1,4 +1,5 @@
 var choose = require('./chooseValue.js');
+var log = require('./loggingRemovals.js');
 
 module.exports = {
   reOrderEmail: function (array, property) {
@@ -8,7 +9,7 @@ module.exports = {
         'output_data_email' : {},
         'duplicate_data' : {}
       };
-
+      var email_reason = "Removed due to presence of duplicate email entry with later entryDate";
       arr.forEach(function (entry) {
         // console.log('===== in email for each')
         //if the new object doesn't already have a property with the id, put it in there
@@ -24,16 +25,19 @@ module.exports = {
             //if there is already a._idin duplicate data for the entry, push it in to store it
             if (obj.duplicate_data[entry.email]) {
               //pop the existing out of output_data and push it into duplicate_data
+              log.appendReason(obj.output_data_email[entry.email][0], email_reason);
               obj.duplicate_data[entry.email].push(obj.output_data_email[entry.email].pop());
               obj.output_data_email[entry.email].push(entry);
             } else {
               //otherwise create the prop array to store future similar entries
               obj.duplicate_data[entry.email] = [];
               //pop the existing out of output_data and push it into duplicate_data
+              log.appendReason(obj.output_data_email[entry.email][0], email_reason);
               obj.duplicate_data[entry.email].push(obj.output_data_email[entry.email].pop());
               obj.output_data_email[entry.email].push(entry);
             }
           } else {
+            log.appendReason(entry, email_reason);
             obj.duplicate_data[entry.email].push(entry);
             return;
           }

@@ -1,6 +1,7 @@
 var choose = require('./chooseValue.js');
 var format = require('./format.js');
-var email = require('./reorderEmail');
+var email = require('./reorderEmail.js');
+var log = require('./loggingRemovals.js');
 
 module.exports = {
   reOrder: function (array) {
@@ -11,6 +12,7 @@ module.exports = {
         'output_data_id' : {},
         'duplicate_id_data' : {}
       };
+      var id_reason = "Removed due to presence of duplicate ID entry with later entryDate";
       //big array of data objects, for each source object
       arr.forEach(function (entry) {
         // console.log('===== in for each')
@@ -27,16 +29,19 @@ module.exports = {
             //if there is already a._idin duplicate data for the entry, push it in to store it
             if (obj.duplicate_id_data[entry._id]) {
               //pop the existing out of output_data and push it into duplicate_id_data
+              log.appendReason(obj.output_data_id[entry._id][0], id_reason);
               obj.duplicate_id_data[entry._id].push(obj.output_data_id[entry._id].pop());
               obj.output_data_id[entry._id].push(entry);
             } else {
               //otherwise create the prop array to store future similar entries
               obj.duplicate_id_data[entry._id] = [];
               //pop the existing out of output_data and push it into duplicate_id_data
+              log.appendReason(obj.output_data_id[entry._id][0], id_reason);
               obj.duplicate_id_data[entry._id].push(obj.output_data_id[entry._id].pop());
               obj.output_data_id[entry._id].push(entry);
             }
           } else {
+            log.appendReason(entry, id_reason);
             obj.duplicate_id_data[entry._id].push(entry);
             return;
           }

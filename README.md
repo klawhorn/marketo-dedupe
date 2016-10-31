@@ -3,12 +3,11 @@
 WELCOME TO THE JSON DEDUPLICATION MACHINE!
 
 1. Clone the repo
-2. Run in console:
-  A. cd marketo/dedupe
-  B. npm install
-  C. node app.js <<<absolute path to JSON file to deduplicate>>>
-    1. To see example, run in console: node app.js leads.json
-3. For test coverage run in console: npm run test
+2. Run in console: cd marketo-dedupe
+3. Run in console: npm install
+4. Run in console: node app.js <<<absolute path to JSON file to deduplicate>>>
+5. To see example, run in console: node app.js leads.json
+6. For test coverage run in console: npm run test
 
 ::Challenge Given::
 Programming Challenge:

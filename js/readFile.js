@@ -8,7 +8,7 @@ module.exports = {
     log.greeting();
     fs.readFile(file, 'utf8', function(err, data) {
       var file_data = JSON.parse(data).leads;
-      var data_object = prop_process.reOrderID(file_data);
+      var data_object = prop_process.evaluate(file_data);
       var filtered_by_both = format.formatArray(data_object.email.output_data_email);
       var removed_in_id = data_object.duplicate_id_data;
       var removed_in_email = data_object.email.duplicate_data;

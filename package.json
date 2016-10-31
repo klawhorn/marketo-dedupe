@@ -4,12 +4,13 @@
   "description": "Ingests a JSON file and outputs a deduplicated version of the file input",
   "main": "app.js",
   "dependencies": {
+    "chai": "^3.5.0",
     "chalk": "^1.1.3",
     "moment": "^2.15.2"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "./test/execute"
+    "test": "node ./test/execute"
   },
   "repository": {
     "type": "git",

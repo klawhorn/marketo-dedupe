@@ -1,0 +1,28 @@
+{
+  "name": "marketo-dedupe",
+  "version": "1.0.0",
+  "description": "Ingests a JSON file and outputs a deduplicated version of the file input",
+  "main": "app.js",
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "moment": "^2.15.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "./test/execute"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/klawhorn/marketo-dedupe.git"
+  },
+  "keywords": [
+    "JSON",
+    "dedupe"
+  ],
+  "author": "Katie Lawhorn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/klawhorn/marketo-dedupe/issues"
+  },
+  "homepage": "https://github.com/klawhorn/marketo-dedupe#readme"
+}

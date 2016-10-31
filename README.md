@@ -3,7 +3,7 @@
 WELCOME TO THE JSON DEDUPLICATION MACHINE!
 
 1. Create an empty folder on your machine, open terminal and cd into the empty folder.
-3. To clone the repository, run in console: git clone 
+3. To clone the repository, run in console: git clone https://github.com/klawhorn/marketo-dedupe.git
 4. Run in console: cd marketo-dedupe
 5. Run in console: npm install
 6. Run in console: node app.js <=<=<=insert absolute path to JSON file to deduplicate=>=>=>

@@ -23,12 +23,13 @@ module.exports = {
       log.consoleLogRemoval(removed_in_email, '"email"');
       console.log(removed_in_email);
 
-      var removed_array_id = format.formatArray(removed_in_id);
+      var removed_entry_array = format.formatRemovals(removed_in_id);
       var removed_array_email = format.formatArray(removed_in_email);
+      removed_entry_array.push(format.formatRemovals(removed_in_email));
 
       console.log('\n');
       callback('deduplicatedData.json', filtered_by_both);
-      // callback('removedData.json', filtered_by_id);
+      callback('removedData.json', removed_entry_array);
       });
   },
   duplicateSourceFile : function (file, callback) {

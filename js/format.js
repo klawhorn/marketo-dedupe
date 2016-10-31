@@ -12,5 +12,14 @@ module.exports = {
     var object = {};
     object.leads = arr;
     return JSON.stringify(object);
+  },
+  formatRemovals : function (obj) {
+    var array = [];
+    for (var keys in obj) {
+      obj[keys].forEach(function(deletedEntry) {
+        array.push(deletedEntry);
+      })
+    }
+    return array;
   }
 }

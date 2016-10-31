@@ -7,6 +7,9 @@ module.exports = {
   deduplicate : function (file, callback) {
     log.greeting();
     fs.readFile(file, 'utf8', function(err, data) {
+      if (err) {
+        log.errorLog('reading your specified file');
+      }
       var file_data = JSON.parse(data).leads;
       var data_object = prop_process.evaluate(file_data);
       var filtered_by_both = format.formatArray(data_object.email.output_data_email);
@@ -25,6 +28,9 @@ module.exports = {
   },
   duplicateSourceFile : function (file, callback) {
     fs.readFile(file, 'utf8', function(err, data) {
+      if (err) {
+        log.errorLog('reading your specified file');
+      }
       var file_data = JSON.parse(data).leads;
       callback('sourceData.json', file_data);
     });
